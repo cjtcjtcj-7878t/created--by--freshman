@@ -1,0 +1,64 @@
+# Project: LMS--2.0
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o View/control.o public/commonlist.o public/file.o App/Loginwin.o App/Startwin.o App/data.o App/Adminwin.o App/Clerkwin.o App/Yardmanwin.o App/Cswin.o App/Goods.o View/myTiMe.o
+LINKOBJ  = main.o View/control.o public/commonlist.o public/file.o App/Loginwin.o App/Startwin.o App/data.o App/Adminwin.o App/Clerkwin.o App/Yardmanwin.o App/Cswin.o App/Goods.o View/myTiMe.o
+LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libstdc++ -static-libgcc -leasyx -lgdi32 -lole32 -lwinmm  -leasyx -g3
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = LMS--2.0.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+View/control.o: View/control.cpp
+	$(CPP) -c View/control.cpp -o View/control.o $(CXXFLAGS)
+
+public/commonlist.o: public/commonlist.cpp
+	$(CPP) -c public/commonlist.cpp -o public/commonlist.o $(CXXFLAGS)
+
+public/file.o: public/file.cpp
+	$(CPP) -c public/file.cpp -o public/file.o $(CXXFLAGS)
+
+App/Loginwin.o: App/Loginwin.cpp
+	$(CPP) -c App/Loginwin.cpp -o App/Loginwin.o $(CXXFLAGS)
+
+App/Startwin.o: App/Startwin.cpp
+	$(CPP) -c App/Startwin.cpp -o App/Startwin.o $(CXXFLAGS)
+
+App/data.o: App/data.cpp
+	$(CPP) -c App/data.cpp -o App/data.o $(CXXFLAGS)
+
+App/Adminwin.o: App/Adminwin.cpp
+	$(CPP) -c App/Adminwin.cpp -o App/Adminwin.o $(CXXFLAGS)
+
+App/Clerkwin.o: App/Clerkwin.cpp
+	$(CPP) -c App/Clerkwin.cpp -o App/Clerkwin.o $(CXXFLAGS)
+
+App/Yardmanwin.o: App/Yardmanwin.cpp
+	$(CPP) -c App/Yardmanwin.cpp -o App/Yardmanwin.o $(CXXFLAGS)
+
+App/Cswin.o: App/Cswin.cpp
+	$(CPP) -c App/Cswin.cpp -o App/Cswin.o $(CXXFLAGS)
+
+App/Goods.o: App/Goods.cpp
+	$(CPP) -c App/Goods.cpp -o App/Goods.o $(CXXFLAGS)
+
+View/myTiMe.o: View/myTiMe.cpp
+	$(CPP) -c View/myTiMe.cpp -o View/myTiMe.o $(CXXFLAGS)
